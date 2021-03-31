@@ -1,0 +1,13 @@
+<p>home works!</p>
+<a [routerLink]="link">Go to book List</a>
+<br/>
+<button (click)="goTo('/booklist')">Go to</button>
+<br/>
+<button (click)="goTo()">Go</button>
+
+<button (click)="update()">Update Some thing in App component</button>
+
+
+<ul *ngFor="let x of dummy | test :'Rahul' : 'Sreejib'">
+    <li>{{x.name}}</li>
+</ul>

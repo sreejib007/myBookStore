@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'myBookStore';
+  consoleData(val){
+    console.log('Datasend from child', val)
+  }
 }
