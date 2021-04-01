@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'https://us-central1-book-store-api-51848.cloudfunctions.net'
 };
 
 /*

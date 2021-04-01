@@ -1,0 +1,18 @@
+<a routerLink="/test/2/Rahul">Change to Rahul</a>
+<a routerLink="/test/3/Rahul3">Change to Rahul3</a>
+<p>test works! {{id}} ==>> {{name}}</p>
+
+<button (click)="creatData()">Creat</button>
+<button (click)="getData()">Get</button>
+
+<ul *ngFor="let data of userData">
+    <li>
+       {{data.userName}} 
+    </li>
+</ul>
+<br/>
+<input type="text" placeholder="Please input User name" [(ngModel)]="formData.userName">
+<input type="password" placeholder="Please input password" [(ngModel)]="formData.password">
+<button (click)="submit()">Submit</button>
+
+
