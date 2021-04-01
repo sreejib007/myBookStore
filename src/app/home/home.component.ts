@@ -2,7 +2,6 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from '../data-service.service';
 
-
 @Component({
   selector: 'mbs-home',
   templateUrl: './home.component.html',
