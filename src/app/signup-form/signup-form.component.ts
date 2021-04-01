@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroupDirective } from '@angular/forms';
 
 @Component({
   selector: 'mbs-signup-form',
@@ -7,27 +6,18 @@ import { FormBuilder, FormGroupDirective } from '@angular/forms';
   styleUrls: ['./signup-form.component.css']
 })
 export class SignupFormComponent implements OnInit {
-  // userInfo: {username:string, email:string, phone:string, password:string, rePassword:string}
 
-  constructor(private formBuilder: FormBuilder) { }
-
-  signupForm = this.formBuilder.group({
-    username: '',
-    email: '',
-    phone: '',
-    password: '',
-    repeatPassword: ''
-  })
+  constructor() { }
 
   ngOnInit(): void {
   }
 
   onSubmit(): void {
-    console.log('Submitted data: ', this.signupForm.value);
+    console.log('Submitted!');
   }
 
   onReset() {
-    this.signupForm.reset();
+    console.log('Reset form');
   }
 
 }
