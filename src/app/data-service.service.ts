@@ -4,32 +4,45 @@ import { Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class DataServiceService {
-  private fname:string;
-  private lname:string;
-  private isSidebarBVisible : boolean = false;
-  sidebarVisibilliltyChange: Subject<boolean> = new Subject<boolean>();
 
-  constructor() { }
-  get myFname(){
-    return this.fname;
+export class DataService {
+
+  private fName: string;
+  private lName: string;
+  private isSidebarVisible : boolean = false;
+  sidebarVisibilityChange: Subject<boolean> = new Subject<boolean>();
+
+  constructor() {
+    this.sidebarVisibilityChange.subscribe((value) => {
+      this.isSidebarVisible = value
+    });
+   }
+
+  toggleSidebarVisibility(val) {
+    this.sidebarVisibilityChange.next(val);
   }
+
+  get myFname(){
+    return this.fName;
+  }
+
   set myFname(val){
-    if (typeof val ==='string' ){
-      this.fname= val;
+    if(typeof val === 'string'){
+      this.fName = val;
     }else{
-      alert("wrong data")
+      console.log('Wrong Data type')
     }
   }
 
   get myLname(){
-    return this.lname;
+    return this.lName;
   }
+
   set myLname(val){
-    if (typeof val ==='string' ){
-      this.lname= val;
+    if(typeof val === 'string'){
+      this.lName = val;
     }else{
-      alert("wrong data")
+      console.log('Wrong Data type')
     }
   }
 }

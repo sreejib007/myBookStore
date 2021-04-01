@@ -7,7 +7,6 @@ const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'booklist',loadChildren:()=> import('./booklist/booklist.module').then(m => m.BooklistModule)},
   {path:'register',component:RegistrationFormComponent}
-  
 ];
 
 @NgModule({

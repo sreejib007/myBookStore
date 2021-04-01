@@ -6,8 +6,6 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { TestPipe } from './test.pipe';
-import { RegistrationFormComponent } from './registration-form/registration-form.component';
-
 
 @NgModule({
   declarations: [
@@ -16,7 +14,6 @@ import { RegistrationFormComponent } from './registration-form/registration-form
     FooterComponent,
     HomeComponent,
     TestPipe,
-    RegistrationFormComponent,
   ],
   imports: [
     BrowserModule,
