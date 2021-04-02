@@ -1,38 +1,159 @@
-<div class='form-wrapper mx-auto p-5 pt-3 bg-light border border-3 rounded' style='max-width: 500px;'>
-  <h2 class="display-6 text-center">Enroll Now!</h2><hr>
-  <form (ngSubmit)="onSubmit()">
-    <div class='row mb-3'>
-      <div class='form-group col-sm-6'>
-        <label class='form-label' for='email'>Email</label>
-        <input type='email' class='form-control' id='email' required formControlName='email' />
+<div
+  class="form-wrapper mx-auto p-5 pt-3 bg-light border border-3 rounded"
+  style="max-width: 500px"
+>
+  <h2 class="display-6 text-center">Enroll Now!</h2>
+  <hr />
+  <form (ngSubmit)="onSubmit()" #f="ngForm">
+    <div class="row mb-3">
+      <div class="form-group col-sm-6">
+        <label class="form-label" for="email">First Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="firstName"
+          required
+          ngModel
+          name="firstName"
+          #firstName="ngModel"
+        />
+        <p
+          *ngIf="!firstName.valid && firstName.touched"
+          class="form-text small text-muted"
+        >
+          First name is invalid
+        </p>
       </div>
-      <div class='form-group col-sm-6'>
-        <label class='form-label' for='phone'>Phone Number</label>
-        <input type='tel' class='form-control' id='phone' required formControlName='phone' pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}' />
+      <div class="form-group col-sm-6">
+        <label class="form-label" for="phone">Last Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="lastName"
+          required
+          ngModel
+          name="lastName"
+          #lastName="ngModel"
+        />
+        <p
+          *ngIf="!lastName.valid && lastName.touched"
+          class="form-text small text-muted"
+        >
+          Last name number is invalid
+        </p>
       </div>
     </div>
-    <div class='row mb-3'>
-      <div class='form-group col-sm-12'>
-        <label class='form-label' for='username'>Username</label>
-        <input type='text' class='form-control' id='username' required formControlName='username' />
+    <div class="row mb-3">
+      <div class="form-group col-sm-6">
+        <label class="form-label" for="email">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          required
+          ngModel
+          name="email"
+          #email="ngModel"
+        />
+        <p
+          *ngIf="!email.valid && email.touched"
+          class="form-text small text-muted"
+        >
+          Email is invalid
+        </p>
+      </div>
+      <div class="form-group col-sm-6">
+        <label class="form-label" for="phone">Phone Number</label>
+        <input
+          type="tel"
+          class="form-control"
+          id="phone"
+          required
+          ngModel
+          name="phone"
+          #phone="ngModel"
+          pattern="[0-9]{10}"
+        />
+        <p
+          *ngIf="!phone.valid && phone.touched"
+          class="form-text small text-muted"
+        >
+          Phone number is invalid
+        </p>
       </div>
     </div>
-    <div class='row mb-3'>
-      <div class='form-group col-sm-6'>
-        <label class='form-label' for='password'>Password</label>
-        <input type='password' class='form-control' id='password' required formControlName='password' />
-      </div>
-      <div class='form-group col-sm-6'>
-        <label class='form-label' for='repeatpassword'>Repeat Password</label>
-        <input type='password' class='form-control' id='repeatpassword' required formControlName='repeatPassword' />
+    <div class="row mb-3">
+      <div class="form-group col-sm-12">
+        <label class="form-label" for="username">Username</label>
+        <input
+          type="text"
+          class="form-control"
+          id="username"
+          required
+          ngModel
+          name="username"
+          #username="ngModel"
+        />
+        <p
+          *ngIf="!username.valid && username.touched"
+          class="form-text small text-muted"
+        >
+          Username is invalid
+        </p>
       </div>
     </div>
-    <div class='row mb-3 pt-3'>
-      <div class='form-action col-sm-6'>
-        <button (click)="onReset()" type='button' class='btn btn-secondary'>Reset</button>
+    <div class="row mb-3">
+      <div class="form-group col-sm-6">
+        <label class="form-label" for="password">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          required
+          ngModel
+          name="password"
+          #password="ngModel"
+        />
+        <p
+          *ngIf="!password.valid && password.touched"
+          class="form-text small text-muted"
+        >
+          Password is invalid
+        </p>
       </div>
-      <div class='form-action col-sm-6'>
-        <button type='submit' class='btn btn-primary float-end'>Submit</button>
+      <div class="form-group col-sm-6">
+        <label class="form-label" for="repeatpassword">Repeat Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="repeatpassword"
+          required
+          ngModel
+          name="repeatPassword"
+          #repeatPassword="ngModel"
+        />
+        <p
+          *ngIf="!repeatPassword.valid && repeatPassword.touched"
+          class="form-text small text-muted"
+        >
+          Should be same as password
+        </p>
+      </div>
+    </div>
+    <div class="row mb-3 pt-3">
+      <div class="form-action col-sm-6">
+        <button (click)="onReset()" type="button" class="btn btn-secondary">
+          Reset
+        </button>
+      </div>
+      <div class="form-action col-sm-6">
+        <button
+          type="submit"
+          class="btn btn-primary float-end"
+          [disabled]="!f.valid"
+        >
+          Submit
+        </button>
       </div>
     </div>
   </form>
