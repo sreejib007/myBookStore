@@ -7,6 +7,11 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { TestPipe } from './test.pipe';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
+import { FormsModule } from '@angular/forms';
+import { SignupFormComponent } from './signup-form/signup-form.component';
+import { HttpClientModule } from '@angular/common/http';
+import { BooklistingComponent } from './booklisting/booklisting.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -17,10 +22,15 @@ import { RegistrationFormComponent } from './registration-form/registration-form
     HomeComponent,
     TestPipe,
     RegistrationFormComponent,
+    SignupFormComponent,
+    BooklistingComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

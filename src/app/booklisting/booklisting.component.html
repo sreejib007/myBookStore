@@ -4,7 +4,7 @@
     <div class="col-md-4" *ngFor="let book of booklist">
       <div class="book-card">
         <div class="book-img">
-          <img src="/assets/book02.jpg">
+          <img src={{book.imageUrl}}>
         </div>
         <div class="book-title">
           {{book.title}}
