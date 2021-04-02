@@ -8,9 +8,11 @@ import { HomeComponent } from './home/home.component';
 import { TestPipe } from './test.pipe';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
 import { FormComponent } from './form/form.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TestComponent } from './test/test.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormT } from './reactiveFormT/reactiveFormT.component';
+import { ReactiveForm } from './reactiveForm/reactiveForm.component';
 //import { HttpClient } from '@angular/common/http';
 
 
@@ -24,11 +26,14 @@ import { HttpClientModule } from '@angular/common/http';
     RegistrationFormComponent,
     FormComponent,
     TestComponent,
+    ReactiveFormT,
+    ReactiveForm
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { HttpDataService } from '../http-data.service';
 
 @Component({
@@ -11,8 +11,9 @@ export class TestComponent implements OnInit {
   id: number
   name: string
   userData: any;
+  isclasschanged: boolean = false;
   formData: {userName: string, password:string} = {userName:'', password:''}
-  constructor(private rought:ActivatedRoute, private httpreq: HttpDataService) { }
+  constructor(private rought:ActivatedRoute, private httpreq: HttpDataService, private router:Router) { }
 
   ngOnInit(): void {
     // this.id = this.rought.snapshot.params['id'];
@@ -24,11 +25,20 @@ export class TestComponent implements OnInit {
 
    })
 
+   this.rought.queryParams.subscribe((queryParams:Params)=>{
+      console.log('queryParams',queryParams)
+   })
+
   //  this.httpreq.getData('https://us-central1-book-store-api-51848.cloudfunctions.net/user').subscribe((res)=>{
   //     console.log('My Data from get', res);
   //  })
 
 
+  }
+
+  change(val){
+    //this.router.navigate([val], { queryParams: { filter: 'new' }, queryParamsHandling: 'merge' })
+    this.router.navigate([val], { queryParams: {abc:'mytext'}, queryParamsHandling:'merge'});
   }
 
   //apiUrl: 'https://us-central1-book-store-api-51848.cloudfunctions.net'
@@ -54,6 +64,10 @@ export class TestComponent implements OnInit {
 
   submit(){
     console.log('My user name and passowrd is',this.formData)
+  }
+
+  changeClassName(){
+    this.isclasschanged = !this.isclasschanged
   }
 
 }

@@ -1,5 +1,9 @@
-<a routerLink="/test/2/Rahul">Change to Rahul</a>
-<a routerLink="/test/3/Rahul3">Change to Rahul3</a>
+<button (click)="change('/test/2/Rahul/admin')">Change to Rahul</button>
+<br/>
+<a routerLink="/test/3/Rahul3/admin" 
+[queryParams]="{role:'admin', name:'sreejib'}"
+[queryParamsHandling]="'merge'"
+ >Change to Rahul3</a>
 <p>test works! {{id}} ==>> {{name}}</p>
 
 <button (click)="creatData()">Creat</button>
@@ -13,6 +17,9 @@
 <br/>
 <input type="text" placeholder="Please input User name" [(ngModel)]="formData.userName">
 <input type="password" placeholder="Please input password" [(ngModel)]="formData.password">
+
+<p [ngClass]="isclasschanged ?'backbroundred' :'backbroundblue'">this is ngClass exemple</p>
+<button (click)="changeClassName()">change class</button>
 <button (click)="submit()">Submit</button>
 
 

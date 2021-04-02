@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://us-central1-book-store-api-51848.cloudfunctions.net'
+  apiUrl: 'https://us-central1-book-store-api-51848.cloudfunctions.net/'
 };
 
 /*
