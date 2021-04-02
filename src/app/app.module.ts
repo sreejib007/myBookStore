@@ -13,6 +13,8 @@ import { TestComponent } from './test/test.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormT } from './reactiveFormT/reactiveFormT.component';
 import { ReactiveForm } from './reactiveForm/reactiveForm.component';
+import { HighlightDirective } from './highlight.directive';
+import { ButtoncolourDirective } from './buttoncolour.directive';
 //import { HttpClient } from '@angular/common/http';
 
 
@@ -27,7 +29,9 @@ import { ReactiveForm } from './reactiveForm/reactiveForm.component';
     FormComponent,
     TestComponent,
     ReactiveFormT,
-    ReactiveForm
+    ReactiveForm,
+    HighlightDirective,
+    ButtoncolourDirective
   ],
   imports: [
     BrowserModule,
