@@ -1,0 +1,8 @@
+<div class="card" style="width: 18rem;" *ngFor="let book of myCartItem">
+    <img src={{book.imageUrl}} class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{book.title}}</h5>
+      <p class="card-text">{{book.author}}</p>
+      <p class="card-text">{{book.price}}</p>
+    </div>
+  </div>

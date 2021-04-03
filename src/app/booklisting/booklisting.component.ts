@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import { DataServiceService } from '../data-service.service';
 
 @Component({
   selector: 'mbs-booklisting',
@@ -9,7 +10,7 @@ import {HttpClient} from '@angular/common/http';
 export class BooklistingComponent implements OnInit {
 
   booklist;
-  constructor(private http : HttpClient){
+  constructor(private http : HttpClient, private dataServiceService :DataServiceService){
   }
   ngOnInit(): void {
     this.http.get('https://us-central1-book-store-api-51848.cloudfunctions.net/book')
@@ -17,6 +18,11 @@ export class BooklistingComponent implements OnInit {
       console.log(Response);
       this.booklist=Response;
     });
+  }
+
+  addToCart(book){
+    this.dataServiceService.myCatrListData = book;
+    //console.log(book)
   }
 
 }

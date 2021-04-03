@@ -12,6 +12,7 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BooklistingComponent } from './booklisting/booklisting.component';
 import { LoginComponent } from './login/login.component';
+import { MyCartComponent } from './my-cart/my-cart.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { LoginComponent } from './login/login.component';
     RegistrationFormComponent,
     SignupFormComponent,
     BooklistingComponent,
-    LoginComponent
+    LoginComponent,
+    MyCartComponent
   ],
   imports: [
     BrowserModule,
